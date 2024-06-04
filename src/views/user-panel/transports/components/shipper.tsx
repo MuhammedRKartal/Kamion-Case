@@ -7,7 +7,7 @@ export const TransportShipper = props => {
 
   return (
     <td className="px-4 py-6 text-primary-800 text-[11px] leading-[17px]">
-      <div className="flex items-center justify-center gap-2 w-full">
+      <div className="flex items-center justify-center gap-2">
         <Image
           src={"/assets/shipment-box.png"}
           alt="shipment box"

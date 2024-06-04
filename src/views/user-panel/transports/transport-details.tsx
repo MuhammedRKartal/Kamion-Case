@@ -11,7 +11,7 @@ import { TransportStatus } from "./components/status";
 
 export default function TransportDetails({ data }: { data: TransportDetailsType }) {
   return (
-    <tr className="capitalize bg-white w-full border">
+    <tr className="capitalize bg-white w-full border rounded-xl">
       <TransportCheckbox />
       <TransportID data={data} />
       <TransportShipper data={data} />

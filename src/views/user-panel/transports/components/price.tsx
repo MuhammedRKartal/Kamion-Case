@@ -6,7 +6,7 @@ export const TransportPrice = props => {
 
   return (
     <td className="px-4 py-6 text-primary-800 text-[11px] leading-[17px]">
-      <div className="rounded-full bg-gray-100 p-2.5 font-medium whitespace-nowrap">
+      <div className="rounded-full bg-gray-100 p-2.5 font-medium whitespace-nowrap text-center">
         {price} {currency}
       </div>
     </td>
