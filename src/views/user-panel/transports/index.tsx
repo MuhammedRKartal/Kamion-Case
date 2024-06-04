@@ -23,10 +23,13 @@ export default function Transports() {
   }, []);
 
   return (
-    <Section tag="section">
+    <Section
+      tag="section"
+      className="overflow-auto whitespace-pre xxl:overflow-hidden xxl:whitespace-normal"
+    >
       <TransportsHeader />
       {data && !loading ? (
-        <table className="border-separate border-spacing-y-1 w-[inherit]">
+        <table className="border-separate border-spacing-y-1 w-[inherit]  overflow-auto">
           <thead>
             <tr className="text-[11px] leading-[18px] text-gray-700 text-center">
               {ths.map(th => (

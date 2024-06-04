@@ -14,7 +14,7 @@ export default async function LoginDetails(props: PropsType) {
 
   return (
     <div className={twMerge("relative", className)}>
-      <div className="absolute top-40 w-full">
+      <div className="xl:absolute top-40 w-full">
         <LoginHeader className="mb-14" />
         <LoginForm />
       </div>

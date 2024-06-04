@@ -102,7 +102,7 @@ export const Button = (props: ButtonProps) => {
               props.appearance === "outlined" && [
                 "bg-transparent",
                 "border-primary-100",
-                "hover:border-primar-300",
+                "hover:border-primary-300",
                 "hover:bg-primary-100",
               ],
               props.appearance === "ghost" && [
@@ -111,7 +111,6 @@ export const Button = (props: ButtonProps) => {
                 "hover:bg-primary-100",
               ],
               props.appearance === "bright" && [
-                "text-white",
                 "bg-transparent",
                 "border-transparent",
                 "hover:border-transparent",

@@ -28,6 +28,7 @@ export default function LoginForm(props: PropsType) {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const isAuthenticated = useAppSelector(state => state?.auth?.isAuthenticated ?? false);
+  const errorMessage = useAppSelector(state => state?.auth?.message);
 
   if (isAuthenticated) {
     router.push("/");
@@ -73,9 +74,11 @@ export default function LoginForm(props: PropsType) {
           icon={faLock}
           error={errors.password}
         />
+        {errorMessage && <div className="text-xs text-error">{errorMessage}</div>}
+
         <Button
           className="rounded-[10px] w-fit border-primary-400 bg-primary-400 hover:border-primary-300 hover:bg-primary-300 gap-3"
-          disabled={!watchFields.email || !watchFields.password}
+          disabled={!watchFields.email || !watchFields.password || watchFields.password.length < 6}
           type="submit"
         >
           Login

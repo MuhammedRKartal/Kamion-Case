@@ -104,7 +104,7 @@ input::-webkit-inner-spin-button {
   @apply px-5;
   @apply md:px-12;
   @apply xl:px-28;
-  @apply xxl:px-56;
+  @apply xxl:px-64;
 }
 
 .k-py {
@@ -116,7 +116,7 @@ input::-webkit-inner-spin-button {
   @apply px-5 !important;
   @apply md:px-12 !important;
   @apply xl:px-28 !important;
-  @apply xxl:px-56 !important;
+  @apply xxl:px-64 !important;
 }
 
 .k-pyi {

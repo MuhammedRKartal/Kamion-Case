@@ -21,7 +21,7 @@ export default async function LoginBanner(props: PropsType) {
           alt="Kamion MENA's Most Efficient Digital Freight Network"
           width={836}
           height={1053}
-          quality={50}
+          quality={100}
           priority={true}
           className="opacity-10"
         />

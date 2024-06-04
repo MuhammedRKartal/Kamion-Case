@@ -2,10 +2,11 @@
 
 import { Image } from "@/components/image";
 import Link from "next/link";
+import Logout from "./logout";
 
 export default async function Header() {
   return (
-    <header className="h-[100px] py-6 w-full k-container k-px">
+    <header className="h-[100px] py-6 w-full k-px flex justify-between">
       <Link href={"/"}>
         <Image
           src={"/assets/company-logo-text.png"}
@@ -15,6 +16,7 @@ export default async function Header() {
           aspectRatio={167 / 40}
         ></Image>
       </Link>
+      <Logout />
     </header>
   );
 }

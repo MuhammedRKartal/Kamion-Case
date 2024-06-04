@@ -33,6 +33,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     ...rest
   } = props;
 
+  const hasFloatingLabel = label && labelStyle === "floating";
   const hasPlaceholder = label && (labelStyle === "inner" || !labelStyle);
   const isPassword = type && type === "password";
 
@@ -42,6 +43,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     "hover:border-primary",
     "active:border-primary",
     "focus-visible:outline-none focus:border-primary",
+    hasFloatingLabel && "pt-3",
     error &&
       "!border-error focus:!border-error active:!border-error hover:!border-error !text-error",
     disabled && "pointer-events-none opacity-40",
@@ -107,7 +109,33 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
               )}
             </Button>
           )}
-          {icon && (
+
+          {isPassword && icon && (
+            <Button
+              type="button"
+              appearance="bright"
+              size="xs"
+              className="absolute right-3 top-1/2 -translate-y-1/2"
+              onClick={() => {
+                setShowValue(!showValue);
+              }}
+            >
+              {showValue && (
+                <span
+                  className={clsx(
+                    "w-1 h-3/5 absolute top-1/2 left-1/2 bg-primary-400 rounded-xl border-l-2 border-l-black content-[''] -translate-x-1/2 -translate-y-1/2 -rotate-[60deg] z-50",
+                    error && "!bg-error"
+                  )}
+                />
+              )}
+              <FontAwesomeIcon
+                icon={icon}
+                className={clsx("text-primary-400 text-xl", error && "!text-error")}
+              />
+            </Button>
+          )}
+
+          {icon && !isPassword && (
             <Button
               type="button"
               appearance="bright"
@@ -128,7 +156,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
             </Button>
           )}
         </div>
-        {error && <span className="-mt-1 text-sm text-error">{error.message}</span>}
+        {error && <span className="text-end text-xs text-error">{error.message}</span>}
       </div>
     </>
   );

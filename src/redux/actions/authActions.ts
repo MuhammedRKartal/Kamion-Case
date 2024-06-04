@@ -61,3 +61,25 @@ export const login: AsyncThunk<void, UserLoginType, { dispatch: any }> = createA
       });
   }
 );
+
+export const logout: AsyncThunk<void, void, { dispatch: any }> = createAsyncThunk(
+  "auth/logout",
+  async (_, { dispatch }) => {
+    try {
+      dispatch(setIsAuthenticating(true));
+
+      removeCookie("access_token");
+
+      dispatch(setIsAuthenticated(false));
+      dispatch(setToken(null));
+      dispatch(setUser({}));
+      dispatch(setMessage(null));
+
+      dispatch(setIsAuthenticating(false));
+
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  }
+);
