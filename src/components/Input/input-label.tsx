@@ -4,6 +4,7 @@ import { InputLabelProps } from "../types";
 
 export const InputLabel: React.FC<InputLabelProps> = ({
   label,
+  floatingLabelText,
   labelStyle,
   focused,
   hasValue,
@@ -31,7 +32,14 @@ export const InputLabel: React.FC<InputLabelProps> = ({
         className
       )}
     >
-      {label}{" "}
+      {floatingLabelText && floating &&
+        <>
+          {!focused ?
+            <span>{floatingLabelText}</span>:<span>{label}</span>
+          }
+        </>
+      }
+      {!floating || (!floatingLabelText && floating) && <span>{label}</span>}{" "}
       {required && (
         <span className={twMerge("text-primary dark:text-secondary", hasError ? "text-error" : "")}>
           *

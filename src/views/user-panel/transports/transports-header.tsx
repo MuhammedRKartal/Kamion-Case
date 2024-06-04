@@ -7,8 +7,9 @@ export default function TransportsHeader() {
       <h1 className="text-primary text-xl leading-[33px]">Taşımalarım</h1>
       <div className="w-[277px]">
         <Input
+          labelStyle="inner"
+          label="Arayın..."
           className="h-[44px] text-xs font-light bg-white"
-          placeholder="Arayın..."
           icon={faSearch}
           iconClassName="text-xs"
           iconButtonClassName="right-0"

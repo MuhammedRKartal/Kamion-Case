@@ -9,7 +9,7 @@ export const TransportStatus = props => {
   const textColor = getContrastColor(color);
 
   return (
-    <td className="px-4 py-6 text-primary-800 text-[11px] leading-[17px] rounded-r-xl">
+    <td className="px-4 py-6 text-primary-800 text-[10px] font-normal leading-5 rounded-r-xl">
       <div
         className="rounded-full bg-gray-100 py-2.5 px-4 flex justify-center items-center whitespace-nowrap"
         style={{ backgroundColor: color, color: textColor }}

@@ -36,7 +36,7 @@ export default function LoginForm(props: PropsType) {
 
   const loginValidationSchema = object().shape({
     email: string().email("Please enter a valid e-mail.").required("This field is required."),
-    password: string().min(6, "Min 6 characters.").required("This field is required."),
+    password: string().matches(/(?:\D*\d){6}/, "Min 6 numeretic characters").required("This field is required."),
   });
 
   const {
@@ -69,6 +69,7 @@ export default function LoginForm(props: PropsType) {
         <Input
           labelStyle="floating"
           label="Password"
+          floatingLabelText="Min 6 numeretic characters"
           type="password"
           {...register("password")}
           icon={faLock}

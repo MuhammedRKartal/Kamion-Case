@@ -5,6 +5,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export interface InputProps extends React.HTMLProps<HTMLInputElement> {
   label?: string;
+  floatingLabelText?: string | undefined;
   labelStyle?: "outer" | "inner" | "floating";
   labelClassName?: string;
   className?: string;
@@ -18,6 +19,7 @@ export interface InputProps extends React.HTMLProps<HTMLInputElement> {
 
 export interface InputLabelProps extends React.HTMLProps<HTMLInputElement> {
   label: string | undefined;
+  floatingLabelText?: string | undefined;
   labelStyle?: "outer" | "inner" | "floating";
   focused: boolean;
   hasValue: boolean;

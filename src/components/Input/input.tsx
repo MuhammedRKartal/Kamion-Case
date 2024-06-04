@@ -21,6 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     id,
     label,
     labelStyle,
+    floatingLabelText,
     error,
     type,
     required = false,
@@ -38,12 +39,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const isPassword = type && type === "password";
 
   const inputClass = twMerge(
-    "bg-transparent text-base w-full border border-gray-500 px-6 h-[88px] rounded-lg my-[3px] transition duration-200 !text-primary",
+    "bg-transparent text-base w-full border border-gray-500 px-4 h-[88px] rounded-lg my-[3px] transition duration-200 !text-primary",
     "placeholder:text-primary",
     "hover:border-primary",
     "active:border-primary",
     "focus-visible:outline-none focus:border-primary",
-    hasFloatingLabel && "pt-3",
+    hasFloatingLabel && "pt-3 px-6",
     error &&
       "!border-error focus:!border-error active:!border-error hover:!border-error !text-error",
     disabled && "pointer-events-none opacity-40",
@@ -69,6 +70,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           <InputLabel
             label={label}
             labelStyle={labelStyle}
+            floatingLabelText={floatingLabelText}
             focused={focused}
             hasValue={hasValue}
             required={required}
