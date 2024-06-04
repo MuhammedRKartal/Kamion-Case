@@ -36,7 +36,9 @@ export default function LoginForm(props: PropsType) {
 
   const loginValidationSchema = object().shape({
     email: string().email("Please enter a valid e-mail.").required("This field is required."),
-    password: string().matches(/(?:\D*\d){6}/, "Min 6 numeretic characters").required("This field is required."),
+    password: string()
+      .matches(/(?:\D*\d){6}/, "Min 6 numeretic characters")
+      .required("This field is required."),
   });
 
   const {

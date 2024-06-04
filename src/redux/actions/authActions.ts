@@ -1,10 +1,5 @@
 import { createAsyncThunk, AsyncThunk } from "@reduxjs/toolkit";
-import {
-  setIsAuthenticated,
-  setToken,
-  setUser,
-  setMessage,
-} from "../reducers/auth";
+import { setIsAuthenticated, setToken, setUser, setMessage } from "../reducers/auth";
 import { user as userUrls } from "@/data/urls";
 import { removeCookie, setCookie } from "@/utils";
 

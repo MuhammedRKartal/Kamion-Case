@@ -2,8 +2,8 @@ export const TransportDate = props => {
   const { data } = props;
 
   const pickup_date = new Date(data?.pick_up_date);
-  const day = ('0' + pickup_date.getUTCDate()).slice(-2);
-  const month = ('0' + (pickup_date.getUTCMonth() + 1)).slice(-2);
+  const day = ("0" + pickup_date.getUTCDate()).slice(-2);
+  const month = ("0" + (pickup_date.getUTCMonth() + 1)).slice(-2);
   const year = pickup_date.getUTCFullYear();
 
   const formattedDate = `${day}/${month}/${year}`;
